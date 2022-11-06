@@ -1,4 +1,5 @@
 # w209-final-project-section7
+##### Authors: Charlie Shaw, Jash Sompalli, Justin Wong, Stephen Tan
 Final Project for w209 - Codebase and Collaboration
 
 
