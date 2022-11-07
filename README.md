@@ -10,3 +10,4 @@ Final Project for w209 - Codebase and Collaboration
 
 ## References
 - [w209 web hosting via ischool servers](https://docs.google.com/document/d/1WhGPj32ukYWc-v9qEs1WmMqofmXIKm0bniJs7tG19dI/edit)
+- [altair + flask](https://plainenglish.io/blog/create-a-simple-covid-19-dashboard-with-flask-plotly-altair-chart-js-and-adminlte)
