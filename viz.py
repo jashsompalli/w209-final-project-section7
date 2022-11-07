@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, abort, request
+from flask import Blueprint, render_template, abort, request, redirect, jsonify
 from jinja2 import TemplateNotFound
 from viz_utils import *
 
@@ -18,6 +18,10 @@ def before_request():
         'width=' + window.innerWidth + '&height=' + window.innerHeight)()
         </script>
         """
+
+@viz_page.route('/')
+def redirect_home():
+    return redirect('/')
 
 @viz_page.route('/temperature')
 def temperature():
@@ -53,7 +57,7 @@ def search():
                             chart_json=json_chart
                             )
     except Exception as e:
-        return "Something went wrong: " + e + e.message
+        return jsonify({"error":"Something went wrong: " + str(e)})
 
 @viz_page.route('/deepdive', methods=['GET', 'POST'])
 def deepdive():
@@ -62,6 +66,7 @@ def deepdive():
         width, height = determine_chart_dimensions(args)
         domain = [args.get('begin_date','1979-01-01'), args.get('end_date','2022-11-01')]
         disaster_types = get_unique_disaster_types()
+        k = request.get('helo',None) + 5
         if request.method == 'GET':
             json_chart = make_deepdive_chart(domain=domain,
                                             width=width,
@@ -87,4 +92,4 @@ def deepdive():
                                     disaster_types=disaster_types,
                                     chart_json=json_chart)
     except Exception as e:
-        return "Something went wrong: " + e + e.message
+        return jsonify({"error":"Something went wrong: " + str(e)})
