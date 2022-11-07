@@ -35,12 +35,12 @@ Bootstrap(app)
 
 @app.route("/")
 def home():
-    return render_template("index.html",
+    return render_template("/index.html",
                             title="Home")
 
 @app.route('/team')
 def team():
-    return render_template('team.html', title='Team',
+    return render_template('/team.html', title='Team',
                             charlie_png=url_for('static', filename='charlie.png'),
                             jash_png=url_for('static', filename='jash.png'),
                             justin_png=url_for('static', filename='justin.png'),
@@ -76,4 +76,5 @@ def site_map():
 nav.init_app(app)
 
 if __name__ == "__main__":
+    app.debug = True
     app.run()

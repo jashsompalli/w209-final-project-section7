@@ -22,14 +22,14 @@ def before_request():
 @viz_page.route('/temperature')
 def temperature():
     try:
-        return render_template("temperature.html", title="Temperature")
+        return render_template("/temperature.html", title="Temperature")
     except TemplateNotFound:
         abort(404)
 
 @viz_page.route('/disasters')
 def disasters():
     try:
-        return render_template("disasters.html", title="FEMA Declared Disasters")
+        return render_template("/disasters.html", title="FEMA Declared Disasters")
     except TemplateNotFound:
         abort(404)
 
@@ -38,7 +38,7 @@ def search():
     args = request.args
     width, height = determine_chart_dimensions(args)
     if request.method == 'GET':
-        return render_template("search.html", title="Search")
+        return render_template("/search.html", title="Search")
     if request.method == 'POST':
         name = request.form['text']
         json_chart = make_search_chart(raw_data=DATASET,
@@ -46,7 +46,7 @@ def search():
                                         height=height,
                                         incident=name.lower(),
                                         json=True)
-        return render_template("search.html",
+        return render_template("/search.html",
                         title="Search",
                         input=name,
                         chart_json=json_chart
@@ -65,7 +65,7 @@ def deepdive():
                                         disaster_type='All',
                                         json=True
                                         )
-        return render_template("deepdive.html",
+        return render_template("/deepdive.html",
                                 title="Deepdive",
                                 disaster_types=disaster_types,
                                 chart_json=json_chart)
@@ -77,7 +77,7 @@ def deepdive():
                                         disaster_type=disaster_type,
                                         json=True
                                         )
-        return render_template('deepdive.html',
+        return render_template('/deepdive.html',
                                 title='Deepdive',
                                 disaster_type=disaster_type,
                                 disaster_types=disaster_types,
