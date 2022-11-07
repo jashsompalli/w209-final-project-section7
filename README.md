@@ -27,7 +27,7 @@ touch ~/w209/start.wsgi
 The following commands should get you started with running the flask app locally using a virtual environment that relaods with changes.
 
 ```
-virtualenv venv --python=/usr/local/bin/python3.7 # Create venv virtual environment with python 3.7
+virtualenv venv --python=/usr/local/bin/python3.8 # Create venv virtual environment with python 3.8
 source venv/bin/activate # Activate virtual environment
 pip install -r requirements.txt # Install necessary packages
 
