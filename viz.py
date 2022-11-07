@@ -15,6 +15,6 @@ def temperature():
 @viz_page.route('/disasters')
 def disasters():
     try:
-        return render_template("disasters.html", title="FEMDA Declared Disasters")
+        return render_template("disasters.html", title="FEMA Declared Disasters")
     except TemplateNotFound:
         abort(404)
