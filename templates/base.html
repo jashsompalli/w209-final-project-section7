@@ -58,19 +58,4 @@
     </div>
   </body>
 
-  <script>
-  // Refresh page based on heigth and width of viewport for responsive charting
-  const params = new Proxy(new URLSearchParams(window.location.search), {
-    get: (searchParams, prop) => searchParams.get(prop),
-  });
-  const REFRESH_THRESHOLD = 200;
-  window.addEventListener('resize', (event) => {
-    if ((Math.abs(window.innerWidth - params.width) > REFRESH_THRESHOLD) ||
-        (Math.abs(window.innerHeight - params.height) > REFRESH_THRESHOLD)) {
-      // refresh page with new height and width
-      window.location.href = window.location.href.split('?')[0] + '?'+
-          'width=' + window.innerWidth + '&height=' + window.innerHeight
-    }
-  });
-  </script>
 </html>
