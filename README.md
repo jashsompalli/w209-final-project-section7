@@ -11,6 +11,17 @@ Final Project for w209 - Codebase and Collaboration
 
 ## Getting Started
 
+### Re-"deploying" to Ischool servers
+
+Redeploying is possible, but you'll need to clone the repo, install new packages (if needed), and restart the wsgi server.
+
+```
+cd w209
+source bin/activate
+pip install -r requirements.txt
+touch ~/w209/start.wsgi
+```
+
 ### Development using `virutalenv` with flask
 
 The following commands should get you started with running the flask app locally using a virtual environment that relaods with changes.
@@ -28,8 +39,6 @@ flask run
 ```
 
 Alternatively, the `start_dev_app.sh` was created to run the commands for you, assuming the packages are already installed.
-
-These instructions
 
 ## References
 
