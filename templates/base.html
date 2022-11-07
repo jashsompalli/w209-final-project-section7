@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <!-- Load an icon library to show a hamburger menu (bars) on small screens -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+      rel="stylesheet"
+      id="bootstrap-css"
+    />
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script> -->
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script> -->
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script> -->
+    <!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> -->
+    <!-- <script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+
+    <title>{% block title %}{% endblock %} - Power Forward</title>
+  </head>
+  {% include 'navbar.html' %} {% include 'style.html' %}
+
+  <body>
+    <div id="content">
+      <div class="jumbotron {{ parallax }}">
+        {% if jumbo_logo %}
+        <img
+          src="{{ jumbo_logo }}"
+          class="text-center"
+          style="width: 60%; z-index: 2; position: relative;"
+        />
+        {% else %} {% endif %}
+        <h1 class="display-4">
+          {% if title %} {{ title }} {% else %} {% endif %}
+        </h1>
+      </div>
+
+      {% block content %}{% endblock %}
+    </div>
+
+    <br />
+    <div id="footer" align="center">
+      {% block footer %} Made with tears by
+      <a href={{ url_for('team') }}>
+        our team
+      </a>
+      {% endblock %}
+    </div>
+  </body>
+</html>

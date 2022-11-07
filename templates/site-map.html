@@ -1,0 +1,31 @@
+<div>STATUS: {{ status }}<div>
+
+<div>TIME: {{time}}<div>
+
+<h3>All Endpoints</h3>
+<div>
+  {%- for single in all_endpoints %}
+
+   {{ single }}
+   <br>
+  {% endfor %}
+</div>
+
+
+<h3>GET</h3>
+<div>
+  {%- for pair in get_links %}
+
+   <a href={{ pair[0] }}>{{ pair[1] }}</a>
+   <br>
+  {% endfor %}
+</div>
+
+<h3>POST</h3>
+<div>
+  {%- for pair in post_links %}
+
+   <a href={{ pair[0] }}>{{ pair[1] }}</a>
+   <br>
+  {% endfor %}
+</div>

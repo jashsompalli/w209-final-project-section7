@@ -1,0 +1,58 @@
+{% extends 'base.html' %} {% block title %}Team{% endblock %} {% block content
+%}
+<div class="container">
+  <h1>DATASCI W209 Data Visualization</h1>
+  <h3>Project Concept</h3>
+  <p>
+    Our group would like to visualize FEMA declared disasters from the mid
+    twentieth century alongside climate change data that describes changes in
+    the Earth’s temperature. The reason why we were drawn to this idea was that
+    despite the prevalence of climate change visualizations, there were not many
+    visualizations that linked climate change to government action. For our
+    project concept, we want to not only show changes in the environment but
+    also how those changes may have forced the US government to react through
+    the proxy of FEMA declared disasters.
+  </p>
+  <p>
+    Additionally, our project would allow users to explore FEMA disasters by
+    state and type, over a set period of time. This would educate the audience
+    on the frequency changes of environmental disasters.
+  </p>
+
+  <h3>Users</h3>
+  <p>
+    Our users would consist of environmental policymakers and advocacy groups
+    who are interested in understanding the relationship between climate change
+    and FEMA declared disasters.
+  </p>
+
+  <h3>Visualization Tasks</h3>
+  <p>
+    Users will be able to explore FEMA disasters as a nation or by state.
+    Depending on the level of granularity, users will be able to see the number
+    and type of disasters within a given year or time period. Juxtaposed with
+    this FEMA data, we’ll also indicate the changes in global climate
+    temperatures and state any correlation.
+  </p>
+
+  <h3>Data Sources</h3>
+  <li>
+    <a
+      href="https://www.kaggle.com/datasets/headsortails/us-natural-disaster-declarations?select=us_disaster_declarations.csv"
+      >US Natural Disaster FEMA Declaration on Kaggle</a
+    >
+  </li>
+  <li>
+    <a
+      href="https://cfpub.epa.gov/ghgdata/inventoryexplorer/#allsectors/allsectors/allgas/gas/all"
+      >EPA Greenhouse Gas Data Explorer</a
+    >
+  </li>
+  <li>
+    <a
+      href="https://cfpub.epa.gov/ghgdata/inventoryexplorer/data_explorer_flight.html"
+      >EPA Greenhouse Gas Inventory</a
+    >
+  </li>
+</div>
+{% endblock %}
