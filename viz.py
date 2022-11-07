@@ -57,7 +57,9 @@ def search():
                             chart_json=json_chart
                             )
     except Exception as e:
-        return jsonify({"error":"Something went wrong: " + str(e)})
+        return jsonify({"error":"Something went wrong: " + str(e),
+                        "DATASET":DATASET,
+                        "TEMPERATURE_DATASET":TEMPERATURE_DATASET})
 
 @viz_page.route('/deepdive', methods=['GET', 'POST'])
 def deepdive():
@@ -92,4 +94,6 @@ def deepdive():
                                     disaster_types=disaster_types,
                                     chart_json=json_chart)
     except Exception as e:
-        return jsonify({"error":"Something went wrong: " + str(e)})
+        return jsonify({"error":"Something went wrong: " + str(e),
+                        "DATASET":DATASET,
+                        "TEMPERATURE_DATASET":TEMPERATURE_DATASET})
