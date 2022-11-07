@@ -94,6 +94,9 @@ def deepdive():
                                     disaster_types=disaster_types,
                                     chart_json=json_chart)
     except Exception as e:
-        return jsonify({"error":"Something went wrong: " + str(e),
-                        "DATASET":DATASET,
-                        "TEMPERATURE_DATASET":TEMPERATURE_DATASET})
+        try:
+            return jsonify({"error":"Something went wrong: " + str(e),
+                            "DATASET":DATASET,
+                            "TEMPERATURE_DATASET":TEMPERATURE_DATASET})
+        except Exception as e:
+            return jsonify({"error":"Something went wrong: " + str(e)})
