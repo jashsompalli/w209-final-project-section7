@@ -160,8 +160,8 @@ def make_deepdive_chart(domain,
     return (temp_disaster + temp_regression)
 
 state_id_map = get_census_ansi_codes()
-dataset = make_frame(DATASET)
-dataset = state_summary_frame(dataset)
+# dataset = make_frame(DATASET)
+# dataset = state_summary_frame(dataset)
 
 def get_unique_disaster_types():
     return ['All'] + sorted(make_frame(DATASET).incident.unique())
