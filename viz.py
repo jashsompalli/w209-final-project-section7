@@ -68,7 +68,6 @@ def deepdive():
         width, height = determine_chart_dimensions(args)
         domain = [args.get('begin_date','1979-01-01'), args.get('end_date','2022-11-01')]
         disaster_types = get_unique_disaster_types()
-        k = request.get('helo',None) + 5
         if request.method == 'GET':
             json_chart = make_deepdive_chart(domain=domain,
                                             width=width,
