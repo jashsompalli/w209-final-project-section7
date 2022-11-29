@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block title %}{% endblock %} {% block content %}
+{% extends 'base.html' %} {% block title %} {% endblock %} {% block content %}
 <head>
   <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
@@ -19,10 +19,10 @@
       <div class="col-md-10">
         <select name="disaster_type" class="input-field">
           {% for d in disaster_types %} {% if d == disaster_type %}
-          <option value="{{d}}">{{d}} selected</option
-          >" {% else %}
+          <option value="{{d}}">{{d}} selected</option>
+          {% else %}
           <option value="{{d}}">{{d}}</option
-          >" {% endif %} {% endfor %}
+          >{% endif %} {% endfor %}
         </select>
       </div>
       <div class="col-md-2 deepdive-submit">

@@ -5,7 +5,7 @@ from vega_datasets import data
 
 # states geo map
 STATES = alt.topo_feature(data.us_10m.url, 'states')
-CWD = os.getcwd() + '/w209'
+CWD = os.getcwd() #+ '/w209'
 # Data paths
 DATASET = f'{CWD}/data/fema_disaster_with_noaa_monthly_temp_combined.csv'# if os.getenv('ENVIRONMENT') == 'PROD' else Path('./data/fema_disaster_with_noaa_monthly_temp_combined.csv')
 TEMPERATURE_DATASET =  f'{CWD}/data/average_monthly_temperature_by_state_1950-2022.csv'# if os.getenv('ENVIRONMENT') == 'PROD' else Path('./data/average_monthly_temperature_by_state_1950-2022.csv')

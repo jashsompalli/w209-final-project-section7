@@ -15,9 +15,8 @@ from utils import has_no_empty_params
 #here we define our menu items
 topbar = Navbar(View('Home', 'home'),
                 View('Search', 'viz.search'),
-                View('Deepdive', 'viz.deepdive'),
-                View('Temperature', 'viz.temperature'),
-                View('Disasters', 'viz.disasters'),
+                View('Deepdive', 'viz.deepdive_tableau'),
+                View('About', 'about'),
                 View('Team', 'team'),
                 )
 
@@ -35,8 +34,13 @@ Bootstrap(app)
 
 @app.route("/")
 def home():
-    return render_template("/index.html",
+    return render_template("/combined.html",
                             title="Home")
+
+@app.route("/about")
+def about():
+    return render_template("/index.html",
+                            title="About")
 
 @app.route('/team')
 def team():

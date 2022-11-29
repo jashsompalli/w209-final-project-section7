@@ -1,0 +1,89 @@
+{% extends 'base.html' %} {% block title %} {% endblock %} {% block content %}
+<div class="container">
+  <h1>FEMA Disaster Declarations & State Temperature Changes</h1>
+
+  <h3>Intended Audience</h3>
+  <p>Government policymakers and environmental advocacy groups.</p>
+
+  <h3>Goal</h3>
+  <p>
+    To provide the audience with visualizations that explore the relationships
+    between FEMA disaster declarations and state climate data in order to inform
+    environmental public policy and state budgets.
+  </p>
+
+  <h3>Data</h3>
+  <p>
+    Data: FEMA Disaster Declarations and NOAA State Temperatures
+    <a
+      href="https://www.kaggle.com/code/justinrwong/disaster-month-temp/data?scriptVersionId=107480631&select=fema_disaster_with_noaa_monthly_temp_combined.csv"
+      >(Kaggle link)</a
+    >
+  </p>
+
+  <h3>What are FEMA Declared Disasters?</h3>
+  <p>
+    What are FEMA Declared Disasters? FEMA emergency declarations supplement
+    State and local or Indian tribal government efforts in providing emergency
+    services, such as the protection of lives, property, public health, and
+    safety, or to lessen or avert the threat of a catastrophe in any part of the
+    United States. The President can declare an emergency for any occasion or
+    instance when the President determines federal assistance is needed.
+  </p>
+
+  <h2>Get Started</h2>
+
+  <h3>FEMA Disasters and Temperature by State</h3>
+  <h5>Instructions</h5>
+  <p>
+    Click on the map below to learn about the average temperature and FEMA
+    disasters within that state.
+  </p>
+  <p>To learn about multiple states hold ctrl and click.</p>
+
+  <div
+    class="tableauPlaceholder"
+    id="viz1669488955214"
+    style="position: relative;"
+  >
+    <noscript
+      ><a href="#"
+        ><img
+          alt="Prototype "
+          src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;38&#47;38NCXBM2K&#47;1_rss.png"
+          style="border: none;" /></a></noscript
+    ><object class="tableauViz" style="display: none;"
+      ><param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+      <param name="embed_code_version" value="3" />
+      <param name="path" value="shared&#47;38NCXBM2K" />
+      <param name="toolbar" value="yes" /><param
+        name="static_image"
+        value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;38&#47;38NCXBM2K&#47;1.png" />
+      <param name="animate_transition" value="yes" /><param
+        name="display_static_image"
+        value="yes" /><param name="display_spinner" value="yes" /><param
+        name="display_overlay"
+        value="yes" /><param name="display_count" value="yes" /><param
+        name="language"
+        value="en-US"
+    /></object>
+  </div>
+  <script type="text/javascript">
+    var divElement = document.getElementById("viz1669488955214");
+    var vizElement = divElement.getElementsByTagName("object")[0];
+    if (divElement.offsetWidth > 800) {
+      vizElement.style.width = "100%";
+      vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+    } else if (divElement.offsetWidth > 500) {
+      vizElement.style.width = "100%";
+      vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+    } else {
+      vizElement.style.width = "100%";
+      vizElement.style.height = "1027px";
+    }
+    var scriptElement = document.createElement("script");
+    scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+  </script>
+</div>
+{% endblock %}

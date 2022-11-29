@@ -61,6 +61,14 @@ def search():
                         "DATASET":DATASET,
                         "TEMPERATURE_DATASET":TEMPERATURE_DATASET})
 
+@viz_page.route('/deepdive-tableau')
+def deepdive_tableau():
+    try:
+        return render_template("/deepdive_tableau.html", title="Deepdive")
+    except TemplateNotFound:
+        abort(404)
+
+
 @viz_page.route('/deepdive', methods=['GET', 'POST'])
 def deepdive():
     try:
