@@ -15,8 +15,9 @@ from utils import has_no_empty_params
 #here we define our menu items
 topbar = Navbar(View('Home', 'home'),
                 View('Search', 'viz.search'),
-                View('Deepdive', 'viz.deepdive_tableau'),
-                View('About', 'about'),
+                # View('Deepdive', 'viz.deepdive_tableau'),
+                # View('Temperature', 'viz.temperature'),
+                # View('Disasters', 'viz.disasters'),
                 View('Team', 'team'),
                 )
 
