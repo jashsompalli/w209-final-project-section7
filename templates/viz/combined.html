@@ -3,17 +3,19 @@
   <div class="container" id="about">
     <h1>FEMA Disaster Declarations & State Temperature Changes</h1>
 
-    <h3 id="intended-audience">Intended Audience</h3>
+    <a id="intended-audience" href="#intended-audience" class="sliding-link"
+      ><h3>Intended Audience</h3></a
+    >
     <p>Government policymakers and environmental advocacy groups.</p>
 
-    <h3 id="goal">Goal</h3>
+    <a id="goal" href="#goal" class="sliding-link"><h3>Goal</h3></a>
     <p>
       To provide the audience with visualizations that explore the relationships
       between FEMA disaster declarations and state climate data in order to
       inform environmental public policy and state budgets.
     </p>
 
-    <h3 id="data">Data</h3>
+    <a id="data" href="#data" class="sliding-link"><h3>Data</h3></a>
     <p>
       Data: FEMA Disaster Declarations and NOAA State Temperatures
       <a
@@ -22,9 +24,14 @@
       >
     </p>
 
-    <h3 id="what-are-fema-declared-disasters">
-      What are FEMA Declared Disasters?
-    </h3>
+    <a
+      id="what-are-fema-declared-disasters"
+      href="#what-are-fema-declared-disasters"
+      class="sliding-link"
+      ><h3>
+        What are FEMA Declared Disasters?
+      </h3></a
+    >
     <p>
       What are FEMA Declared Disasters? FEMA emergency declarations supplement
       State and local or Indian tribal government efforts in providing emergency
@@ -36,11 +43,18 @@
 
     <hr />
 
-    <h1 id="visualizations">Get Started - Using the Visualizations</h1>
+    <a id="visualizations" href="#visualizations" class="sliding-link"
+      ><h1>Get Started - Using the Visualizations</h1></a
+    >
 
-    <h3 id="disasters-and-temperature">
-      FEMA Disasters and Temperature by State
-    </h3>
+    <a
+      id="disasters-and-temperature"
+      href="#disasters-and-temperature"
+      class="sliding-link"
+      ><h3>
+        FEMA Disasters and Temperature by State
+      </h3></a
+    >
     <h5>Instructions</h5>
     <p>
       Click on the map below to learn about the average temperature and FEMA
@@ -75,30 +89,14 @@
           value="en-US"
       /></object>
     </div>
-    <script type="text/javascript">
-      var divElement = document.getElementById("viz1669488955214");
-      var vizElement = divElement.getElementsByTagName("object")[0];
-      if (divElement.offsetWidth > 800) {
-        vizElement.style.width = "100%";
-        vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
-      } else if (divElement.offsetWidth > 500) {
-        vizElement.style.width = "100%";
-        vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
-      } else {
-        vizElement.style.width = "100%";
-        vizElement.style.height = "1027px";
-      }
-      var scriptElement = document.createElement("script");
-      scriptElement.src =
-        "https://public.tableau.com/javascripts/api/viz_v1.js";
-      vizElement.parentNode.insertBefore(scriptElement, vizElement);
-    </script>
   </div>
 
   <hr />
 
-  <div class="container" id="deepdive">
-    <h3>Diving into Disasters and Temperature</h3>
+  <div class="container">
+    <a id="deepdive" href="#deepdive" class="sliding-link"
+      ><h3>Diving into Disasters and Temperature</h3></a
+    >
     <p>Explore different incident types across different time periods.</p>
     <div
       class="tableauPlaceholder"
@@ -130,47 +128,41 @@
           value="en-US" /><param name="filter" value="publish=yes"
       /></object>
     </div>
-    <script type="text/javascript">
-      var divElement = document.getElementById("viz1669763091409");
-      var vizElement = divElement.getElementsByTagName("object")[0];
-      vizElement.style.width = "100%";
-      vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
-      var scriptElement = document.createElement("script");
-      scriptElement.src =
-        "https://public.tableau.com/javascripts/api/viz_v1.js";
-      vizElement.parentNode.insertBefore(scriptElement, vizElement);
-    </script>
   </div>
 </div>
 
 <div class="col sidebar">
   <button class="row collapsible">
-    <a href="#about" class="one">About</a>
+    <a href="#about" class="one sliding-link">About</a>
   </button>
   <div class="collapsible-content">
     <div class="row">
-      <a href="#intended-audience" class="two">Intended Audience</a>
+      <a href="#intended-audience" class="two sliding-link"
+        >Intended Audience</a
+      >
     </div>
-    <div class="row"><a href="#goal" class="two">Goal</a></div>
-    <div class="row"><a href="#data" class="two">Data</a></div>
+    <div class="row"><a href="#goal" class="two sliding-link">Goal</a></div>
+    <div class="row"><a href="#data" class="two sliding-link">Data</a></div>
     <div class="row">
-      <a href="#what-are-fema-declared-disasters" class="two"
+      <a href="#what-are-fema-declared-disasters" class="two sliding-link"
         >What are FEMA Declared Disasters?</a
       >
     </div>
   </div>
 
   <button class="row collapsible">
-    <a href="#visualizations" class="one">Explore</a>
+    <a href="#visualizations" class="one sliding-link">Explore</a>
   </button>
   <div class="collapsible-content">
     <div class="row">
-      <a href="#disasters-and-temperature" class="two"
+      <a href="#disasters-and-temperature" class="two sliding-link"
         >FEMA Disasters and Temperature by State</a
       >
     </div>
     <div class="row">
-      <a href="#deepdive" class="two">Diving into Disasters and Temperature</a>
+      <a href="#deepdive" class="two sliding-link"
+        >Diving into Disasters and Temperature</a
+      >
     </div>
   </div>
 </div>
@@ -191,11 +183,40 @@
     });
   }
 
-  $(function () {
-    $(".plus-minus-toggle").on("click", function () {
-      $(this).toggleClass("collapsed");
-      console.log($(this));
-    });
+  $(".sliding-link").click(function (e) {
+    e.preventDefault();
+    var aid = $(this).attr("href");
+    $("html,body").animate({ scrollTop: $(aid).offset().top }, "slow");
   });
+</script>
+
+<!-- Load disasters and temperature tableau -->
+<script type="text/javascript">
+  var divElement = document.getElementById("viz1669488955214");
+  var vizElement = divElement.getElementsByTagName("object")[0];
+  if (divElement.offsetWidth > 800) {
+    vizElement.style.width = "100%";
+    vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+  } else if (divElement.offsetWidth > 500) {
+    vizElement.style.width = "100%";
+    vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+  } else {
+    vizElement.style.width = "100%";
+    vizElement.style.height = "1027px";
+  }
+  var scriptElement = document.createElement("script");
+  scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+  vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+<!-- Load Deepdive tableau -->
+<script type="text/javascript">
+  var divElement = document.getElementById("viz1669763091409");
+  var vizElement = divElement.getElementsByTagName("object")[0];
+  vizElement.style.width = "100%";
+  vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+  var scriptElement = document.createElement("script");
+  scriptElement.src = "https://public.tableau.com/javascripts/api/viz_v1.js";
+  vizElement.parentNode.insertBefore(scriptElement, vizElement);
 </script>
 {% endblock %}
