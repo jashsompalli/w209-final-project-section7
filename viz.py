@@ -43,6 +43,18 @@ def search():
         args = request.args
         width, height = determine_chart_dimensions(args)
         if request.method == 'GET':
+            name = args.get('q')
+            if name:
+                json_chart = make_search_chart(raw_data=DATASET,
+                                                width=width,
+                                                height=height,
+                                                incident=name.lower(),
+                                                json=True)
+                return render_template("/search.html",
+                                title="Search",
+                                input=name,
+                                chart_json=json_chart
+                                )
             return render_template("/search.html", title="Search")
         if request.method == 'POST':
             name = request.form['text']
