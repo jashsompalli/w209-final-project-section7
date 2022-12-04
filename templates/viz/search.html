@@ -12,7 +12,7 @@
 </head>
 
 <div class="container">
-  <h1>Search by keyword across all time</h1>
+  <h1>Search by keyword from 1950 - 2022</h1>
   <form method="POST" class="w-100">
     <div class="row">
       <div class="col-md-10 input-icons">
@@ -21,7 +21,8 @@
           name="text"
           type="text"
           class="searchbar input-field"
-          placeholder="Enter a disaster or disaster type"
+          placeholder="Enter a historical disaster or disaster type(s), like 'covid', 'hurricane katrina', or 'hurricane|fire'"
+          ,
           value="{{input}}"
           required
         />
@@ -33,6 +34,20 @@
   </form>
   {% if input is not none %}
   <h3>{{ input }}</h3>
+  <i>
+    <h5>Notes about Search Results</h5>
+    <h6>
+      * FEMA disaster declarations may not always occur in the state that the
+      disaster physically took place in.
+    </h6>
+    <h6>
+      * FEMA distributes money to other regions/states in order to provide
+      states with the monetary resources to aid people from affected states.
+      This is why you may see states which aren't physically affected by the
+      disaster receiving money from FEMA. You are looking at the
+      <strong>flow of money from FEMA to states</strong>.
+    </h6>
+  </i>
   {% endif %}
 </div>
 
