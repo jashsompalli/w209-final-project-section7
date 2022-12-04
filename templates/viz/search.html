@@ -21,7 +21,7 @@
           name="text"
           type="text"
           class="searchbar input-field"
-          placeholder="Enter a historical disaster or disaster type(s), like 'covid', 'hurricane katrina', or 'hurricane|fire'"
+          placeholder="Enter a historical disaster or disaster incident type(s), like 'covid', 'hurricane katrina', or 'hurricane|fire'"
           ,
           value="{{input}}"
           required
@@ -34,28 +34,6 @@
   </form>
   {% if input is not none %}
   <h3>{{ input }}</h3>
-  <i>
-    <h5>Notes about Search Results</h5>
-    <h6>
-      * FEMA disaster declarations may not always occur in the state that the
-      disaster physically took place in.
-    </h6>
-    <h6>
-      * FEMA distributes money to other regions/states in order to provide
-      states with the monetary resources to aid people from affected states.
-      This is why you may see states which aren't physically affected by the
-      disaster receiving money from FEMA. You are looking at the
-      <strong>flow of money from FEMA to states</strong>.
-    </h6>
-    <h6>
-      * See
-      <a
-        href="https://apps-fall22.ischool.berkeley.edu/~justinryanwong/w209/#deepdive"
-        >Diving into Disasters and Temperature</a
-      >
-      for the full list of disaster types.
-    </h6>
-  </i>
   {% endif %}
 </div>
 
@@ -67,4 +45,48 @@
     // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
   }).catch(console.error);
 </script>
-{% endif %} {% endblock %}
+{% endif %}
+
+<div class="container">
+  <i>
+    <h5>Notes about Search Results</h5>
+    <h6>
+      <li>
+        FEMA disaster declarations may not always occur in the state that the
+        disaster physically took place in.
+      </li>
+    </h6>
+    <h6>
+      <li>
+        FEMA distributes money to other regions/states in order to provide
+        states with the monetary resources to aid people from affected states.
+        This is why you may see states which aren't physically affected by the
+        disaster receiving money from FEMA. You are looking at the
+        <strong>flow of money from FEMA to states</strong>.
+      </li>
+    </h6>
+    <h5>
+      <i class="fa fa-lightbulb-o" style="color: #fcd12a;"></i> Search Tips
+      <i class="fa fa-lightbulb-o" style="color: #fcd12a;"></i> :
+    </h5>
+    <h6>
+      <li>
+        The full list of disaster incident types includes: 'Biological',
+        'Chemical', 'Coastal Storm', 'Dam/Levee Break', 'Drought', 'Earthquake',
+        'Fire', 'Fishing Losses', 'Flood', 'Freezing', 'Human Cause',
+        'Hurricane', 'Mud/Landslide', 'Other', 'Severe Ice Storm', 'Severe
+        Storm(s)', 'Snow', 'Terrorist', 'Tornado', 'Toxic Substances',
+        'Tsunami', 'Typhoon', 'Volcano'.
+      </li>
+    </h6>
+    <h6>
+      <li>
+        Check out
+        <a href="https://www.fema.gov/disaster/historic"
+          >FEMA's Historic Disasters</a
+        >.
+      </li>
+    </h6>
+  </i>
+</div>
+{% endblock %}
